@@ -94,6 +94,7 @@ class GlobalVariables(Enum):
     ALLOWED_UPLOAD_MBS: int = 100
     BOT_STATICS_MESSAGE: str = f"**__[BOT STATICS]__**\n\n**--AUTHOR--**  **__-> {BOT_AUTHORS}__**\n\n" \
                                f"**--BOT_VERSION--**  **__-> {BOT_VERSION}__**\n" \
+                               f"\n**--AVAILABLE_AS--**  **__-> {BOT_AVAILABILITY}__**"
 
     # Link Shorter options
     LINK_SHORTER_API_KEY: str = "edc01b5d741ff32f6c2d175a70dc6447"
