@@ -68,7 +68,7 @@ class GlobalVariables(Enum):
     # Bot related variables
     BOT_API_ID: str = "24677256"  # From telegram id handler
     BOT_API_HASH: str = "ef4f700f61fd3e6dac816738d62ba375"  # from telegram id handler
-    BOT_API_TOKEN: str = "6841560275:AAHsxj7tNXqyZzB1YaiSbCPrRuE3O4h21XQ"  # from bot father
+    BOT_API_TOKEN: str = "6354054864:AAGYn7wFkmTiiesJxhhtc6QNjndEOeb3LpI"  # from bot father
     PLATFORM: str = platform.system().lower()
 
     # Auther and bot version related variables
