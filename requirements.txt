@@ -36,4 +36,4 @@ w3lib==2.1.2
 websockets==10.4
 youtube-dl==2021.12.17
 zipp==3.17.0
-git+https://github.com/radare/radare2
+https://raw.githubusercontent.com/radare/radare2/master/sys/install.sh
