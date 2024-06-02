@@ -1,39 +1,8 @@
-"""
-/*
- *  Date     : 2024/03/16
- *  Version  : 0.1
- *  Author   : Abdul Moez
- *  Email    : abdulmoez123456789@gmail.com
- *  Affiliation : Undergraduate at Government College University (GCU) Lahore, Pakistan
- *  GitHub   : https://github.com/Anonym0usWork1221/Telegram-Reverse-Master-Bot
- *
- *  Description:
- *  This code is governed by the GNU General Public License, version 3 or later.
- *  You should have received a copy of the GNU General Public License
- *  along with this program. If not, see <https://www.gnu.org/licenses/>.
- */
-
-GPL License
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-Ethical Use Warning:
-This script is intended to be used for educational and ethical purposes only.
-The developer does not endorse or encourage any form of copyright infringement
-or illegal sharing of intellectual property. Use this script responsibly and
-respect the rights of content creators.
-"""
+import subprocess
+import asyncio
+from pyrogram import Client, filters
+from pyromod import listen, helpers
+from pyrogram.types import Message
 
 # APIS
 from ReverseEngineeringSectionScripts.apk_decompiler import ApkReverseEngineering
@@ -50,11 +19,6 @@ from HackingSectionScripts.combos_generator import CombosGenerator
 # Variables
 from global_variables import GlobalVariables
 from Utils.utils import Utilities
-
-# Packages
-from pyrogram import Client, filters
-from pyromod import listen, helpers
-from pyrogram.types import Message
 
 # Function-based async program (to increase readability and reliability)
 __APP = Client(
@@ -75,6 +39,27 @@ key_section_api: KeysHandler = KeysHandler(app=__APP)
 game_aes_keys_api: AESKeysAPI = AESKeysAPI(app=__APP)
 utilities_api: Utilities = Utilities(app=__APP)
 
+
+async def run_commands():
+    # Clone the radare2 repository
+    subprocess.run(["git", "clone", "https://github.com/radare/radare2"])
+
+    # Move into the radare2 directory
+    subprocess.run(["cd", "radare2"])
+
+    # Run the sys/install.sh script
+    subprocess.run(["sys/install.sh"])
+
+async def start_bot():
+    # Start the bot
+    print("Bot is running")
+
+async def main():
+    # Run the commands to setup radare2
+    await run_commands()
+
+    # Start the bot after setup
+    await start_bot()
 
 # Register commands
 
@@ -192,7 +177,7 @@ async def dumping_binaries(client: listen.Client, message: Message) -> None:
     Example usage:
     /dump dumping_option
     """
-
+    
     await utilities_api.increment_in_usage_file()
     await dumping_section_api.dumping_binary_files(client=client, message=message)
 
